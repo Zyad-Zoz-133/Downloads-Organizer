@@ -1,5 +1,6 @@
 
-
+Organize downloads · PY
+#!/usr/bin/env python3
 """
 سكريبت لتنظيم مجلد الداونلود: بيحرّك الملفات لمجلدات حسب النوع (صور، مستندات، فيديو...).
  
@@ -104,8 +105,8 @@ def main() -> None:
     parser.add_argument(
         "--path",
         type=Path,
-        default=Path(r"D:\Downloads"),
-        help=r"مسار المجلد (الافتراضي: D:\Downloads)",
+        default=Path.home() / "Downloads",
+        help="مسار المجلد (الافتراضي: مجلد Downloads بتاع المستخدم)",
     )
     parser.add_argument("--dry-run", action="store_true", help="عرض النتيجة بدون نقل فعلي")
     parser.add_argument("--by-date", action="store_true", help="تقسيم كل نوع لمجلدات سنة-شهر")
@@ -117,3 +118,4 @@ def main() -> None:
 if __name__ == "__main__":
     main()
  
+Claude finished the response
